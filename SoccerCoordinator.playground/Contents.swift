@@ -78,7 +78,29 @@ var players = [player1, player2, player3, player4, player5, player6,
                player7, player8, player9, player10, player11, player12,
                player13, player14, player15, player16, player17, player18]
 
+// Constant dividing the amount of players that will go in each team
+let playersPerTeam = players.count / 3
+
 // Collections to store players in separate teams
-var teamSharks  = [""]
-var teamDragons = [""]
-var teamRaptors = [""]
+var teamSharks:  [Any] = []
+var teamDragons: [Any] = []
+var teamRaptors: [Any] = []
+
+// Collections to hold players separately based on experience
+
+var experience:   [Any] = []
+var unexperience: [Any] = []
+
+
+
+
+
+
+
+
+
+
+
+
+
+
