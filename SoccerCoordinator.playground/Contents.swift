@@ -91,7 +91,20 @@ var teamRaptors: [Any] = []
 var experience:   [Any] = []
 var unexperience: [Any] = []
 
+// Variable holding the amount of experience players
 
+var numberOfExperiencedPlayers = 0
+
+// Logic to sort experience players into collections 'experience' and 'unexperience'
+for player in players {
+    for (key,value) in player {
+        if (key == "Experience") && (value as! Bool == true) {
+            experience.append(player)
+        } else if (key == "Experience") && (value as! Bool == false) {
+            unexperience.append(player)
+        }
+    }
+}
 
 
 
