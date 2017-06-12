@@ -79,42 +79,79 @@ var players = [player1, player2, player3, player4, player5, player6,
                player7, player8, player9, player10, player11, player12,
                player13, player14, player15, player16, player17, player18]
 
-// Constant dividing the amount of players that will go in each team
-
-let playersPerTeam = players.count / 3
-
 // Collections to store players in separate teams
 
 var teamSharks:  [Any] = []
 var teamDragons: [Any] = []
 var teamRaptors: [Any] = []
 
+// Collection to hold individual teams
+
+let teams: [Any] = [teamSharks, teamDragons, teamRaptors]
+
 // Collections to hold players separately based on experience
 
-var experience:   [Any] = []
-var unexperience: [Any] = []
+var experiencedPlayers:   [Any] = []
+var inexperiencedPlayers: [Any] = []
 
-// Variable for holding the amount of experience players
+// Variables for holding the number of experience players and inexperience players
 
-var numberOfExperiencedPlayers = 0
+var numberOfExperiencedPlayers   = 0
+var numberOfInexperiencedPlayers = 0
 
-// Variable for holding the amount of unexperience players
-
-var numberOfUnexperiencedPlayers = 0
-
-// Logic to sort experience players into collections 'experience' and 'unexperience'
+// Logic to sort players into collections by experience
 
 for player in players {
     for (key,value) in player {
         if (key == "Experience") && (value as! Bool == true) {
-            experience.append(player)
+            experiencedPlayers.append(player)
             numberOfExperiencedPlayers += 1
         } else if (key == "Experience") && (value as! Bool == false) {
-            unexperience.append(player)
-            numberOfUnexperiencedPlayers += 1
+            inexperiencedPlayers.append(player)
+            numberOfInexperiencedPlayers += 1
         }
     }
 }
+
+// Constants to hold count of experiencedPlayers and inexperiencedPlayers
+
+var experiencedCounter   = experiencedPlayers.count
+var inexperiencedCounter = inexperiencedPlayers.count
+
+// Logic for sorting players into teams by experience
+
+for team in teams {
+    if experiencedCounter > 0 {
+        teamSharks.append(experiencedPlayers.removeFirst())
+        experiencedCounter -= 1
+        teamDragons.append(experiencedPlayers.removeFirst())
+        experiencedCounter -= 1
+        teamRaptors.append(experiencedPlayers.removeFirst())
+        experiencedCounter -= 1
+    }
+    
+    if inexperiencedCounter > 0 {
+        teamSharks.append(inexperiencedPlayers.removeFirst())
+        inexperiencedCounter -= 1
+        teamDragons.append(inexperiencedPlayers.removeFirst())
+        inexperiencedCounter -= 1
+        teamRaptors.append(inexperiencedPlayers.removeFirst())
+        inexperiencedCounter -= 1
+    }
+}
+
+// Test
+
+print(teamSharks)
+print()
+print(teamDragons)
+print()
+print(teamRaptors)
+print()
+
+
+
+
 
 
 
