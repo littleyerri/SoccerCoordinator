@@ -94,21 +94,14 @@ let teams: [Any] = [teamSharks, teamDragons, teamRaptors]
 var experiencedPlayers:   [Any] = []
 var inexperiencedPlayers: [Any] = []
 
-// Variables for holding the number of experience players and inexperience players
-
-var numberOfExperiencedPlayers   = 0
-var numberOfInexperiencedPlayers = 0
-
 // Logic to sort players into collections by experience
 
 for player in players {
     for (key,value) in player {
         if (key == "Experience") && (value as! Bool == true) {
             experiencedPlayers.append(player)
-            numberOfExperiencedPlayers += 1
         } else if (key == "Experience") && (value as! Bool == false) {
             inexperiencedPlayers.append(player)
-            numberOfInexperiencedPlayers += 1
         }
     }
 }
@@ -148,8 +141,6 @@ print(teamDragons)
 print()
 print(teamRaptors)
 print()
-
-
 
 
 
