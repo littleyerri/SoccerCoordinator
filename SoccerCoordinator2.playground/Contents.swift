@@ -2,7 +2,7 @@
 
 /*
  --------------------------------------------------------------------------------
- Individual Dictionary Collections holding data for each player.
+    Individual Dictionary Collections holding data for each player.
  --------------------------------------------------------------------------------
  */
 
@@ -81,7 +81,7 @@ let player18: [String: String] = ["Name": "Herschel Krustofski",
 
 /*
  --------------------------------------------------------------------------------
- Individual player Dictionaries collected into a single array.
+    Individual player Dictionaries collected into a single array.
  --------------------------------------------------------------------------------
  */
 
@@ -91,7 +91,7 @@ var players = [player1, player2, player3, player4, player5, player6,
 
 /*
  --------------------------------------------------------------------------------
- Individual collections for holding players into 3 separate teams.
+    Individual collections for holding players into 3 separate teams.
  --------------------------------------------------------------------------------
  */
 
@@ -101,7 +101,7 @@ var teamRaptors: [[String: String]] = []
 
 /*
  --------------------------------------------------------------------------------
- Individual collection to hold the 3 teams.
+    Individual collection to hold the 3 teams.
  --------------------------------------------------------------------------------
  */
 
@@ -109,7 +109,7 @@ let teams = [teamSharks, teamDragons, teamRaptors]
 
 /*
  --------------------------------------------------------------------------------
- Collections to hold players based on experience.
+    Collections to hold players based on experience.
  --------------------------------------------------------------------------------
  */
 
@@ -118,7 +118,7 @@ var inexperiencedPlayers: [[String: String]] = []
 
 /*
  --------------------------------------------------------------------------------
- Logic to sort players into collections by experience.
+    Logic to sort players into collections by experience.
  --------------------------------------------------------------------------------
  */
 
@@ -134,7 +134,7 @@ for player in players {
 
 /*
  --------------------------------------------------------------------------------
- Variables to hold count of experienced and inexperienced players.
+    Variables to hold count of experienced and inexperienced players.
  --------------------------------------------------------------------------------
  */
 
@@ -143,7 +143,7 @@ var inexperiencedPlayerCounter = inexperiencedPlayers.count
 
 /*
  --------------------------------------------------------------------------------
- Logic to sort players into team colletions by experience.
+    Logic to sort players into team colletions by experience.
  --------------------------------------------------------------------------------
  */
 
@@ -169,7 +169,7 @@ for team in teams {
 
 /*
  --------------------------------------------------------------------------------
- Collection to hold individual letters.
+    Collection to hold individual letters.
  --------------------------------------------------------------------------------
  */
 
@@ -177,7 +177,7 @@ var letters: Array! = []
 
 /*
  --------------------------------------------------------------------------------
- Logic to create/print letters to parents/guardians by team.
+    Logic to create/print letters to parents/guardians by team.
  --------------------------------------------------------------------------------
  */
 
@@ -204,15 +204,13 @@ for player in teamRaptors {
 
 /*
  --------------------------------------------------------------------------------
- Print letters.
+    Print letters.
  --------------------------------------------------------------------------------
  */
 
 for letter in letters {
     print(letter)
 }
-
-
 
 
 
