@@ -258,18 +258,3 @@ for player in teamDragons {
 for player in teamRaptors {
     print(player)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
