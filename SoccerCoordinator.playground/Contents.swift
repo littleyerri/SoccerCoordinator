@@ -144,30 +144,28 @@ for player in players {
 var experienceCounter = 0
 
 for (var player) in experiencedPlayers {
-    for team in teams {
-        experienceCounter += 1
+    experienceCounter += 1
+    
+    var remainder = experienceCounter % 3
+    
+    switch remainder {
+    case 1:
+        player["Team"] = "Sharks"
+        player["Practice"] = "March 17th at 3pm"
         
-        var remainder = experienceCounter / 3
+        teamSharks.append(player)
+    case 2:
+        player["Team"] = "Dragons"
+        player["Practice"] = "March 17th at 1pm"
         
-        switch remainder {
-        case 1:
-            player["Team"] = "Sharks"
-            player["Practice"] = "March 17th at 3pm"
-            
-            teamSharks.append(player)
-        case 2:
-            player["Team"] = "Dragons"
-            player["Practice"] = "March 17th at 1pm"
-            
-            teamDragons.append(player)
-        case 3:
-            player["Team"] = "Raptors"
-            player["Practice"] = "March 18th at 1pm"
-            
-            teamRaptors.append(player)
-        default:
-            break
-        }
+        teamDragons.append(player)
+    case 0:
+        player["Team"] = "Raptors"
+        player["Practice"] = "March 18th at 1pm"
+        
+        teamRaptors.append(player)
+    default:
+        break
     }
 }
 
@@ -176,30 +174,28 @@ for (var player) in experiencedPlayers {
 var inexperienceCounter = 0
 
 for (var player) in inexperiencedPlayers {
-    for team in teams {
-        inexperienceCounter += 1
+    inexperienceCounter += 1
+    
+    var remainder = inexperienceCounter % 3
+    
+    switch remainder {
+    case 1:
+        player["Team"] = "Sharks"
+        player["Practice"] = "March 17th at 3pm"
         
-        var remainder = inexperienceCounter / 3
+        teamSharks.append(player)
+    case 2:
+        player["Team"] = "Dragons"
+        player["Practice"] = "March 17th at 1pm"
         
-        switch remainder {
-        case 1:
-            player["Team"] = "Sharks"
-            player["Practice"] = "March 17th at 3pm"
-            
-            teamSharks.append(player)
-        case 2:
-            player["Team"] = "Dragons"
-            player["Practice"] = "March 17th at 1pm"
-            
-            teamDragons.append(player)
-        case 3:
-            player["Team"] = "Raptors"
-            player["Practice"] = "March 18th at 1pm"
-            
-            teamRaptors.append(player)
-        default:
-            break
-        }
+        teamDragons.append(player)
+    case 0:
+        player["Team"] = "Raptors"
+        player["Practice"] = "March 18th at 1pm"
+        
+        teamRaptors.append(player)
+    default:
+        break
     }
 }
 
@@ -243,7 +239,7 @@ for player in teamRaptors {
 
 /*
  --------------------------------------------------------------------------------
- Print letters.
+ Print letters and players.
  --------------------------------------------------------------------------------
 */
 
@@ -251,12 +247,17 @@ for letter in letters {
     print(letter)
 }
 
-print(teamSharks)
-print()
-print(teamDragons)
-print()
-print(teamRaptors)
-print()
+for player in teamSharks {
+    print(player)
+}
+
+for player in teamDragons {
+    print(player)
+}
+
+for player in teamRaptors {
+    print(player)
+}
 
 
 

@@ -4,7 +4,7 @@
  --------------------------------------------------------------------------------
  Individual Dictionary Collections holding data for each player.
  --------------------------------------------------------------------------------
- */
+*/
 
 let player1:  [String: String] = ["Name": "Joe Smith",
                                   "Height": "42",
@@ -83,7 +83,7 @@ let player18: [String: String] = ["Name": "Herschel Krustofski",
  --------------------------------------------------------------------------------
  Individual player Dictionaries collected into a single array.
  --------------------------------------------------------------------------------
- */
+*/
 
 var players = [player1, player2, player3, player4, player5, player6,
                player7, player8, player9, player10, player11, player12,
@@ -93,7 +93,7 @@ var players = [player1, player2, player3, player4, player5, player6,
  --------------------------------------------------------------------------------
  Individual collections for holding players into 3 separate teams.
  --------------------------------------------------------------------------------
- */
+*/
 
 var teamSharks:  [[String: String]] = []
 var teamDragons: [[String: String]] = []
@@ -103,7 +103,7 @@ var teamRaptors: [[String: String]] = []
  --------------------------------------------------------------------------------
  Individual collection to hold the 3 teams.
  --------------------------------------------------------------------------------
- */
+*/
 
 let teams = [teamSharks, teamDragons, teamRaptors]
 
@@ -111,7 +111,7 @@ let teams = [teamSharks, teamDragons, teamRaptors]
  --------------------------------------------------------------------------------
  Collections to hold players based on experience.
  --------------------------------------------------------------------------------
- */
+*/
 
 var experiencedPlayers:   [[String: String]] = []
 var inexperiencedPlayers: [[String: String]] = []
@@ -120,7 +120,7 @@ var inexperiencedPlayers: [[String: String]] = []
  --------------------------------------------------------------------------------
  Logic to sort players into collections by experience.
  --------------------------------------------------------------------------------
- */
+*/
 
 for player in players {
     for (key,value) in player {
@@ -136,7 +136,7 @@ for player in players {
  --------------------------------------------------------------------------------
  Variables to hold count of experienced and inexperienced players.
  --------------------------------------------------------------------------------
- */
+*/
 
 //var experiencedPlayerCounter   = experiencedPlayers.count
 //var inexperiencedPlayerCounter = inexperiencedPlayers.count
@@ -146,37 +146,35 @@ for player in players {
  Logic to sort players into team colletions by experience,
  while adding Team name and Practice time to each player.
  --------------------------------------------------------------------------------
- */
+*/
 
 // Experienced Players Logic
 
 var experienceCounter = 0
 
 for (var player) in experiencedPlayers {
-    for team in teams {
-        experienceCounter += 1
+    experienceCounter += 1
+    
+    var remainder = experienceCounter % 3
+    
+    switch remainder {
+        case 1:
+            player["Team"] = "Sharks"
+            player["Practice"] = "March 17th at 3pm"
         
-        var remainder = experienceCounter / 3
+            teamSharks.append(player)
+        case 2:
+            player["Team"] = "Dragons"
+            player["Practice"] = "March 17th at 1pm"
         
-        switch remainder {
-            case 1:
-                player["Team"] = "Sharks"
-                player["Practice"] = "March 17th at 3pm"
+            teamDragons.append(player)
+        case 0:
+            player["Team"] = "Raptors"
+            player["Practice"] = "March 18th at 1pm"
         
-                teamSharks.append(player)
-            case 2:
-                player["Team"] = "Dragons"
-                player["Practice"] = "March 17th at 1pm"
-        
-                teamDragons.append(player)
-            case 3:
-                player["Team"] = "Raptors"
-                player["Practice"] = "March 18th at 1pm"
-                
-                teamRaptors.append(player)
-            default:
-                break
-        }
+            teamRaptors.append(player)
+        default:
+            break
     }
 }
 
@@ -185,12 +183,11 @@ for (var player) in experiencedPlayers {
 var inexperienceCounter = 0
 
 for (var player) in inexperiencedPlayers {
-    for team in teams {
-        inexperienceCounter += 1
+    inexperienceCounter += 1
         
-        var remainder = inexperienceCounter / 3
+    var remainder = inexperienceCounter % 3
         
-        switch remainder {
+    switch remainder {
         case 1:
             player["Team"] = "Sharks"
             player["Practice"] = "March 17th at 3pm"
@@ -201,14 +198,13 @@ for (var player) in inexperiencedPlayers {
             player["Practice"] = "March 17th at 1pm"
             
             teamDragons.append(player)
-        case 3:
+        case 0:
             player["Team"] = "Raptors"
             player["Practice"] = "March 18th at 1pm"
             
             teamRaptors.append(player)
         default:
             break
-        }
     }
 }
 
@@ -236,7 +232,7 @@ for (var player) in inexperiencedPlayers {
  --------------------------------------------------------------------------------
  Collection to hold individual letters.
  --------------------------------------------------------------------------------
- */
+*/
 
 var letters: [String] = []
 
@@ -244,7 +240,7 @@ var letters: [String] = []
  --------------------------------------------------------------------------------
  Logic to create/print letters to parents/guardians by team.
  --------------------------------------------------------------------------------
- */
+*/
 
 // Create function to set up letter content.
 
@@ -274,20 +270,23 @@ for player in teamRaptors {
  --------------------------------------------------------------------------------
  Print letters.
  --------------------------------------------------------------------------------
- */
+*/
 
 for letter in letters {
     print(letter)
 }
 
-print(teamSharks)
-print(teamSharks.count)
-print(teamDragons)
-print(teamDragons.count)
-print(teamRaptors)
-print(teamRaptors.count)
+for player in teamSharks {
+    print(player)
+}
 
+for player in teamDragons {
+    print(player)
+}
 
+for player in teamRaptors {
+    print(player)
+}
 
 
 
